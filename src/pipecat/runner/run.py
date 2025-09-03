@@ -486,6 +486,9 @@ def main():
 
     args = parser.parse_args()
 
+    args.transport = "webrtc"
+    args.direct = False
+
     # Validate and clean proxy hostname
     if args.proxy:
         args.proxy = _validate_and_clean_proxy(args.proxy)
