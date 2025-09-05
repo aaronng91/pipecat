@@ -232,7 +232,7 @@ class SmallWebRTCConnection(BaseObject):
     def _initialize(self):
         """Initialize the peer connection and associated components."""
         logger.debug("Initializing new peer connection")
-        rtc_config = RTCConfiguration(iceServers=self.ice_servers)
+        rtc_config = RTCConfiguration(iceServers=self.ice_servers, iceTransportPolicy="relay")
 
         self._answer: Optional[RTCSessionDescription] = None
         self._pc = RTCPeerConnection(rtc_config)
